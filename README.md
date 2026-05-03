@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SGV Christian Club Collective
 
-## Getting Started
+The official site for the SGV Christian Club Collective: a regional network of 20 high school Christian clubs across the San Gabriel Valley.
 
-First, run the development server:
+> One mission, every campus.
+
+Built with Next.js 16, Tailwind v4, Supabase (auth + database), and zero ego. Deployed on Railway.
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local       # then fill in your Supabase keys
+npm install
+npm run dev                      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 16 (App Router, Turbopack, server actions, standalone output)
+- React 19
+- Tailwind CSS v4
+- Supabase (Postgres + Auth, accessed via @supabase/ssr)
+- TypeScript, Zod, lucide-react
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+  app/
+    page.tsx                    Home
+    about/                      About
+    events/                     Events list
+    everything-night/           The flagship event landing page
+    clubs/                      Directory of all 20 clubs (with search)
+    leadership/                 Current and past presidents
+    churches/                   Partner churches
+    contact/                    Contact + join form
+      actions.ts                Server actions: submitContact, submitRsvp
+    admin/                      Protected admin area
+      login/                    Email + password sign in
+      page.tsx                  Overview
+      rsvps/                    RSVP table
+      messages/                 Contact inbox
+      actions.ts                signIn / signOut
+  components/                   Shared UI (ScrollNav, Footer, EventCard, etc.)
+  lib/
+    data/                       Static content (clubs, events, leadership, churches)
+    supabase/                   Server + browser clients
+    utils.ts                    cn() helper
+  proxy.ts                      Refreshes Supabase auth cookies on each request
+  types/supabase.ts             Database type definitions
+public/images/                  All event photography
+supabase/schema.sql             Tables, RLS policies, indexes
+railway.json, nixpacks.toml     Railway deploy config
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Setting up Supabase
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a project at [supabase.com](https://supabase.com).
+2. Go to the SQL editor and run the contents of `supabase/schema.sql` once. This creates `rsvps`, `contact_messages`, `events`, `clubs`, `announcements` with RLS policies that:
+   - Allow anonymous inserts on `rsvps` and `contact_messages` (so the public forms work).
+   - Restrict reads to authenticated users (admins).
+3. Copy `Project URL` and `anon public key` into `.env.local`:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR-ANON-KEY
+   ```
+4. Add at least one admin user under Authentication > Users (email + password).
+5. Sign in at `/admin/login`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying to Railway
 
-## Deploy on Vercel
+This repo ships with `railway.json` and `nixpacks.toml`, so deployment is two steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push the repo to GitHub (already wired by Tyler).
+2. On Railway, create a new project from the GitHub repo. Railway autodetects Next.js. Set these env vars:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `NEXT_PUBLIC_APP_URL` (optional, used for OG tags)
+3. Click Deploy. The build runs `npm ci && npm run build`, the runtime runs `npm run start`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`output: "standalone"` is set in `next.config.ts` so the production server is small and self-contained.
+
+## Editing content
+
+| Want to change | File |
+| --- | --- |
+| Clubs list (schools, descriptions) | `src/lib/data/clubs.ts` |
+| Events (Everything Night date, etc.) | `src/lib/data/events.ts` |
+| Leadership team | `src/lib/data/leadership.ts` |
+| Church partners | `src/lib/data/churches.ts` |
+| Site footer copy | `src/components/site-footer.tsx` |
+| Hero copy | `src/app/page.tsx` |
+
+The DB tables in `supabase/schema.sql` are ready when you want to migrate this static content into a CMS.
+
+## RSVP
+
+Right now the homepage and Everything Night CTA point at Partiful. The form on `/contact` saves directly to Supabase (`contact_messages`), and `submitRsvp` is wired up in `src/app/contact/actions.ts` for when you want a built-in RSVP flow.
+
+## Brand
+
+- Navy: `#0d1f3d`
+- Baby blue: `#8ec5fb`
+- Cream / white: `#f5fbff` / `#ffffff`
+- Font: Inter via `next/font`
+
+---
+
+Built with D1 Vibe Coding
