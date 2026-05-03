@@ -10,7 +10,7 @@ export type Event = {
   rsvpUrl?: string;
   image: string;
   featured?: boolean;
-  category: "Everything Night" | "Worship Night" | "Backyard" | "Summer";
+  category: "Everything Night" | "Worship Night" | "Summer";
 };
 
 export const events: Event[] = [
@@ -41,19 +41,6 @@ export const events: Event[] = [
       "A regional worship gathering for every club in the collective.",
     image: "/images/everything-night-band.jpg",
     category: "Worship Night",
-  },
-  {
-    slug: "backyard-summer",
-    title: "Backyard Summer Hangs",
-    tagline: "Smaller. Slower. Still good.",
-    date: "Throughout summer",
-    time: "Evenings",
-    iso: "",
-    location: "Various host homes",
-    description:
-      "Casual hangs across the SGV: food, games, prayer, real talk.",
-    image: "/images/everything-night-picnic.jpg",
-    category: "Backyard",
   },
 ];
 

@@ -13,13 +13,14 @@ export const leaders: Leader[] = [
     blurb: "Leading the collective forward and keeping every campus connected.",
   },
   {
-    name: "Cohen",
+    name: "Colin",
     role: "President",
     era: "current",
-    blurb: "Events, logistics, and making sure Everything Night actually happens.",
+    blurb:
+      "Events, logistics, and making sure Everything Night actually happens.",
   },
   {
-    name: "Elise",
+    name: "Elyse",
     role: "President",
     era: "current",
     blurb: "Communication and partnerships across schools and churches.",
@@ -31,10 +32,11 @@ export const leaders: Leader[] = [
     blurb: "Started the collective. Set the tone: welcoming, never forceful.",
   },
   {
-    name: "Rihanna",
+    name: "Rianna",
     role: "Co-Lead",
     era: "past",
-    blurb: "Helped grow the collective from a few clubs to a regional movement.",
+    blurb:
+      "Helped grow the collective from a few clubs to a regional movement.",
   },
 ];
 
@@ -49,7 +51,8 @@ export const roles = [
   },
   {
     title: "Communication",
-    description: "Newsletters, social, and getting the word out across schools.",
+    description:
+      "Newsletters, social, and getting the word out across schools.",
   },
   {
     title: "Partnerships",

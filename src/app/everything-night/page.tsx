@@ -48,8 +48,8 @@ const lineup = [
   },
   {
     icon: Sparkles,
-    title: "The talk",
-    body: "A short, real message about Jesus. No pressure.",
+    title: "Breakouts",
+    body: "Talks, dodgeball, arts and crafts, and more. Pick your vibe. It's awesome.",
     image: "/images/chosen-dab.jpg",
   },
 ];
@@ -106,11 +106,7 @@ export default function EverythingNightPage() {
           </div>
 
           <dl className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
-            <Stat
-              icon={Calendar}
-              value={featuredEvent.date}
-              label="Date"
-            />
+            <Stat icon={Calendar} value={featuredEvent.date} label="Date" />
             <Stat icon={Clock} value={featuredEvent.time} label="Doors" />
             <Stat
               icon={MapPin}
@@ -182,11 +178,23 @@ export default function EverythingNightPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { src: "/images/everything-night-band.jpg", alt: "Band on stage" },
-            { src: "/images/everything-night-crowd.jpg", alt: "Crowd cheering" },
-            { src: "/images/everything-night-dinner.jpg", alt: "Dinner in the courtyard" },
+            {
+              src: "/images/everything-night-crowd.jpg",
+              alt: "Crowd cheering",
+            },
+            {
+              src: "/images/everything-night-dinner.jpg",
+              alt: "Dinner in the courtyard",
+            },
             { src: "/images/everything-night-dodgeball.jpg", alt: "Dodgeball" },
-            { src: "/images/everything-night-picnic.jpg", alt: "Picnic on the lawn" },
-            { src: "/images/everything-night-poster.jpg", alt: "Everything Night poster" },
+            {
+              src: "/images/everything-night-picnic.jpg",
+              alt: "Picnic on the lawn",
+            },
+            {
+              src: "/images/everything-night-poster.jpg",
+              alt: "Everything Night poster",
+            },
             { src: "/images/everything-night-main.jpg", alt: "Group photo" },
             { src: "/images/chosen-dab.jpg", alt: "Through Him we are chosen" },
           ].map((img, i) => (

@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { ArrowRight, Calendar, Heart, MapPin, Sparkles, Users2 } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Heart,
+  MapPin,
+  Sparkles,
+  Users2,
+} from "lucide-react";
 import { CTAButton } from "@/components/buttons";
 import { Section } from "@/components/section";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -34,11 +41,10 @@ export default function HomePage() {
               San Gabriel Valley
             </p>
             <h1 className="mt-5 text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white text-balance leading-[1.05]">
-              Christian clubs.{" "}
-              <span className="shimmer-text">One valley.</span>{" "}
+              Christian clubs. <span className="shimmer-text">One valley.</span>{" "}
               <span className="text-[var(--color-baby)]">One mission.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--color-sky-200)] leading-relaxed">
+            <p className="mt-6 max-w-xl text-base md:text-lg text-white leading-relaxed [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
               A regional network of high school Christian clubs across the SGV.
               Welcoming. Open to anyone curious about Jesus.
             </p>
@@ -140,13 +146,19 @@ export default function HomePage() {
               </p>
               <ul className="mt-7 space-y-3 text-sm text-[var(--color-navy)]">
                 <li className="flex items-center gap-3">
-                  <Calendar className="w-4 h-4 text-[var(--color-baby)]" aria-hidden="true" />
+                  <Calendar
+                    className="w-4 h-4 text-[var(--color-baby)]"
+                    aria-hidden="true"
+                  />
                   <span>
                     {featuredEvent.date} starting at {featuredEvent.time}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[var(--color-baby)]" aria-hidden="true" />
+                  <MapPin
+                    className="w-4 h-4 text-[var(--color-baby)]"
+                    aria-hidden="true"
+                  />
                   <span>{featuredEvent.location}</span>
                 </li>
               </ul>
