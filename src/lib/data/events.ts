@@ -24,7 +24,7 @@ export const events: Event[] = [
     location: "Pasadena High School",
     description:
       "Worship, dinner, dodgeball, and a real conversation about Jesus. Bring a friend.",
-    rsvpUrl: "https://partiful.com/",
+    rsvpUrl: "https://partiful.com/e/gy3BajXzxlnGA6VuPei2?c=Pgd2dAsW",
     image: "/images/everything-night-main.jpg",
     featured: true,
     category: "Everything Night",

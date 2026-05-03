@@ -87,7 +87,7 @@ export default function EverythingNightPage() {
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <CTAButton
-              href="https://partiful.com/"
+              href="https://partiful.com/e/gy3BajXzxlnGA6VuPei2?c=Pgd2dAsW"
               external
               variant="secondary"
               size="lg"
@@ -225,7 +225,7 @@ export default function EverythingNightPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <CTAButton
-              href="https://partiful.com/"
+              href="https://partiful.com/e/gy3BajXzxlnGA6VuPei2?c=Pgd2dAsW"
               external
               variant="primary"
               size="lg"

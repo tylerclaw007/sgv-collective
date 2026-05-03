@@ -76,7 +76,7 @@ export default function ContactPage() {
                 RSVP on Partiful so we know how much food to make.
               </p>
               <a
-                href="https://partiful.com/"
+                href="https://partiful.com/e/gy3BajXzxlnGA6VuPei2?c=Pgd2dAsW"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[var(--color-baby)] text-[var(--color-navy)] hover:bg-white transition cursor-pointer"
