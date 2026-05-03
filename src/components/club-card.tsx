@@ -6,13 +6,14 @@ export function ClubCard({ club }: { club: Club }) {
   return (
     <article className="group relative rounded-2xl bg-white border border-[var(--color-sky-100)] p-6 hover:border-[var(--color-baby)] hover:shadow-lg hover:shadow-[var(--color-navy)]/5 transition-all duration-300">
       <div className="flex items-start gap-4">
-        <div className="w-14 h-14 shrink-0 rounded-xl bg-[var(--color-sky-50)] grid place-items-center overflow-hidden p-1.5 group-hover:bg-[var(--color-baby)] transition">
+        <div className="w-16 h-16 shrink-0 rounded-full bg-white grid place-items-center overflow-hidden p-2 ring-1 ring-[var(--color-sky-100)] group-hover:ring-[var(--color-baby)] shadow-sm transition">
           <Image
             src={club.logo}
             alt={`${club.school} logo`}
-            width={56}
-            height={56}
+            width={64}
+            height={64}
             className="w-full h-full object-contain"
+            unoptimized={club.logo.endsWith(".gif")}
           />
         </div>
         <div className="min-w-0">
