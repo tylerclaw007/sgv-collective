@@ -4,15 +4,40 @@ export type Club = {
   shortName?: string;
   city: string;
   description: string;
+  logo: string;
 };
 
-export const clubs: Club[] = [
+const logoBySlug: Record<string, string> = {
+  pasadena: "/images/clubs/pasadena.jpeg",
+  "san-marino": "/images/clubs/san-marino.png",
+  arcadia: "/images/clubs/arcadia.jpg",
+  "south-pasadena": "/images/clubs/south-pasadena.png",
+  "john-muir": "/images/clubs/john-muir.jpg",
+  "crescenta-valley": "/images/clubs/crescenta-valley.jpg",
+  "cs-arts": "/images/clubs/cs-arts.png",
+  duarte: "/images/clubs/duarte.png",
+  gabrielino: "/images/clubs/gabrielino.webp",
+  maranatha: "/images/clubs/maranatha.jpg",
+  "mark-keppel": "/images/clubs/mark-keppel.jpg",
+  "marshall-fundamental": "/images/clubs/marshall-fundamental.png",
+  monrovia: "/images/clubs/monrovia.png",
+  "temple-city": "/images/clubs/temple-city.jpeg",
+  westridge: "/images/clubs/westridge.png",
+  glendale: "/images/clubs/glendale.gif",
+  glendora: "/images/clubs/glendora.png",
+  "san-gabriel": "/images/clubs/san-gabriel.png",
+  "rio-hondo-prep": "/images/clubs/rio-hondo-prep.png",
+  "flintridge-prep": "/images/clubs/flintridge-prep.jpeg",
+};
+
+const clubsRaw: Omit<Club, "logo">[] = [
   {
     slug: "pasadena",
     school: "Pasadena High School",
     shortName: "Pasadena HS",
     city: "Pasadena",
-    description: "Home base for Everything Night. A core campus in the collective.",
+    description:
+      "Home base for Everything Night. A core campus in the collective.",
   },
   {
     slug: "san-marino",
@@ -33,7 +58,8 @@ export const clubs: Club[] = [
     school: "South Pasadena High School",
     shortName: "South Pas HS",
     city: "South Pasadena",
-    description: "Tight-knit community focused on real conversations about faith.",
+    description:
+      "Tight-knit community focused on real conversations about faith.",
   },
   {
     slug: "john-muir",
@@ -75,7 +101,8 @@ export const clubs: Club[] = [
     school: "Maranatha High School",
     shortName: "Maranatha HS",
     city: "Pasadena",
-    description: "Christian school community plugged into the wider collective.",
+    description:
+      "Christian school community plugged into the wider collective.",
   },
   {
     slug: "mark-keppel",
@@ -145,6 +172,12 @@ export const clubs: Club[] = [
     school: "Flintridge Prep",
     shortName: "Flintridge Prep",
     city: "La Cañada Flintridge",
-    description: "Students from across the area meeting weekly to grow in faith.",
+    description:
+      "Students from across the area meeting weekly to grow in faith.",
   },
 ];
+
+export const clubs: Club[] = clubsRaw.map((c) => ({
+  ...c,
+  logo: logoBySlug[c.slug] ?? "/images/sgv-logo.png",
+}));
