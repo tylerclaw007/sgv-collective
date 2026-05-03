@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/instagram";
 import type { Club } from "@/lib/data/clubs";
 
 export function ClubCard({ club }: { club: Club }) {
@@ -16,7 +17,7 @@ export function ClubCard({ club }: { club: Club }) {
             unoptimized={club.logo.endsWith(".gif")}
           />
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <h3 className="text-base font-semibold text-[var(--color-navy)] truncate">
             {club.school}
           </h3>
@@ -27,6 +28,25 @@ export function ClubCard({ club }: { club: Club }) {
           <p className="mt-3 text-sm text-[var(--color-sky-700)] leading-relaxed">
             {club.description}
           </p>
+          {club.instagrams.length > 0 && (
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              {club.instagrams.map((ig) => (
+                <a
+                  key={ig.handle}
+                  href={`https://www.instagram.com/${ig.handle}/`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${club.shortName ?? club.school} Instagram${
+                    ig.label ? ` (${ig.label})` : ""
+                  }`}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[var(--color-sky-50)] text-[var(--color-navy)] hover:bg-[var(--color-baby)] transition cursor-pointer"
+                >
+                  <InstagramIcon className="w-3.5 h-3.5" />
+                  <span>{ig.label ?? `@${ig.handle}`}</span>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </article>

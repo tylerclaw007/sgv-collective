@@ -5,6 +5,26 @@ export type Club = {
   city: string;
   description: string;
   logo: string;
+  instagrams: { handle: string; label?: string }[];
+};
+
+const instagramsBySlug: Record<string, { handle: string; label?: string }[]> = {
+  pasadena: [{ handle: "phs.jesusclub" }],
+  "san-marino": [{ handle: "smhsactsclub" }],
+  arcadia: [
+    { handle: "arcadiafca", label: "FCA" },
+    { handle: "alliesarcadia", label: "Allies" },
+  ],
+  "south-pasadena": [{ handle: "sphs.ccf" }],
+  "john-muir": [{ handle: "jmhs_mission316" }],
+  "crescenta-valley": [{ handle: "cvhsfcf" }],
+  "cs-arts": [{ handle: "csartssgv_christianclub" }],
+  gabrielino: [{ handle: "gabchristianclub" }],
+  "marshall-fundamental": [{ handle: "marshallchristianclub" }],
+  monrovia: [{ handle: "monroviachristianclub" }],
+  "temple-city": [{ handle: "tchs.christian.club" }],
+  glendora: [{ handle: "ghschristianclub" }],
+  "san-gabriel": [{ handle: "sghs.christianclub" }],
 };
 
 const logoBySlug: Record<string, string> = {
@@ -30,7 +50,7 @@ const logoBySlug: Record<string, string> = {
   "flintridge-prep": "/images/clubs/flintridge-prep.jpeg",
 };
 
-const clubsRaw: Omit<Club, "logo">[] = [
+const clubsRaw: Omit<Club, "logo" | "instagrams">[] = [
   {
     slug: "pasadena",
     school: "Pasadena High School",
@@ -180,4 +200,5 @@ const clubsRaw: Omit<Club, "logo">[] = [
 export const clubs: Club[] = clubsRaw.map((c) => ({
   ...c,
   logo: logoBySlug[c.slug] ?? "/images/sgv-logo.png",
+  instagrams: instagramsBySlug[c.slug] ?? [],
 }));
