@@ -1,6 +1,7 @@
 export type Church = {
   name: string;
   pastor?: string;
+  pastors?: string[];
   city?: string;
   support: string;
 };
@@ -25,12 +26,12 @@ export const churches: Church[] = [
   },
   {
     name: "Seeds of Life Church",
-    pastor: "Kenny Yi",
+    pastor: "Pastor Kenny Yee",
     support: "Partner church walking with the collective.",
   },
   {
-    name: "Frontier",
-    pastor: "Abraham",
+    name: "Frontier Church",
+    pastor: "Pastor Abraham",
     support: "Partner church standing with our student leaders.",
   },
   {
@@ -38,14 +39,49 @@ export const churches: Church[] = [
     pastor: "Pastor Christian Franklin",
     support: "Partner church serving the SGV alongside us.",
   },
+  {
+    name: "Christian Assembly Eagle Rock",
+    pastors: ["Pastor Levi Walker", "Pastor Jimmy Chacon"],
+    support: "Partner church supporting the collective.",
+  },
 ];
 
 export const pastoralGuidance: PastoralGuide[] = [
   {
-    name: "Epicenter",
+    name: "Pastor Josh Patingo",
     pastor: "Pastor Josh Patingo",
     church: "Epicenter",
     role: "Pastoral guidance and partnership",
+  },
+  {
+    name: "Pastor Kenny Yee",
+    pastor: "Pastor Kenny Yee",
+    church: "Seeds of Life Church",
+    role: "Pastoral guidance for the collective",
+  },
+  {
+    name: "Pastor Abraham",
+    pastor: "Pastor Abraham",
+    church: "Frontier Church",
+    role: "Pastoral guidance for the collective",
+  },
+  {
+    name: "Pastor Christian Franklin",
+    pastor: "Pastor Christian Franklin",
+    church: "Vintage Pasadena Church",
+    role: "Pastoral guidance for the collective",
+  },
+  {
+    name: "Pastor Levi Walker",
+    pastor: "Pastor Levi Walker",
+    church: "Christian Assembly Eagle Rock",
+    role: "Pastoral guidance for the collective",
+  },
+  {
+    name: "Pastor Jimmy Chacon",
+    pastor: "Pastor Jimmy Chacon",
+    church: "Christian Assembly Eagle Rock",
+    role: "Pastoral guidance for the collective",
   },
 ];
 
