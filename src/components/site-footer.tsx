@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram";
@@ -9,9 +10,13 @@ export function SiteFooter() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <Link href="/" className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-xl bg-[var(--color-baby)] grid place-items-center text-[var(--color-navy)] text-xs font-bold tracking-widest">
-              SGV
-            </span>
+            <Image
+              src="/images/sgv-logo.png"
+              alt="SGV Christian Club Collective logo"
+              width={44}
+              height={44}
+              className="w-11 h-11 object-contain"
+            />
             <span>
               <span className="block text-white text-base font-semibold leading-tight">
                 Christian Club Collective
@@ -90,8 +95,8 @@ export function SiteFooter() {
       <div className="relative border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-sky-300)]">
           <p>
-            &copy; {new Date().getFullYear()} SGV Christian Club Collective. Built
-            with love in the valley.
+            &copy; {new Date().getFullYear()} SGV Christian Club Collective.
+            Built with love in the valley.
           </p>
           <p className="text-[var(--color-sky-300)]">
             Through Him, we are chosen.

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -59,11 +60,16 @@ export function ScrollNav() {
           className="flex items-center gap-2 group"
           aria-label="SGV Christian Club Collective"
         >
-          <span className="relative w-9 h-9 rounded-xl bg-[var(--color-navy)] grid place-items-center">
-            <span className="text-white text-[11px] font-bold tracking-widest">
-              SGV
-            </span>
-            <span className="absolute -inset-px rounded-xl ring-1 ring-[var(--color-baby)] opacity-0 group-hover:opacity-100 transition" />
+          <span className="relative w-10 h-10 grid place-items-center">
+            <Image
+              src="/images/sgv-logo.png"
+              alt="SGV Christian Club Collective logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain"
+              priority
+            />
+            <span className="absolute -inset-1 rounded-xl ring-1 ring-[var(--color-baby)] opacity-0 group-hover:opacity-100 transition" />
           </span>
           <span className="hidden sm:block">
             <span className="block text-sm font-semibold text-[var(--color-navy)] leading-tight">

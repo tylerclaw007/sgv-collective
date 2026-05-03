@@ -1,7 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { LogOut, MessageSquare, Megaphone, Users2, Calendar } from "lucide-react";
-import { createSupabaseServer, isSupabaseConfigured } from "@/lib/supabase/server";
+import {
+  LogOut,
+  MessageSquare,
+  Megaphone,
+  Users2,
+  Calendar,
+} from "lucide-react";
+import {
+  createSupabaseServer,
+  isSupabaseConfigured,
+} from "@/lib/supabase/server";
 import { signOut } from "./actions";
 
 export const metadata = {
@@ -49,7 +59,9 @@ async function AdminShell({ children }: { children: React.ReactNode }) {
   // To keep this simple and correct, we render the shell only when authed.
   if (!user) {
     // Not authed: render bare children so /admin/login can show.
-    return <div className="min-h-screen bg-[var(--color-cream)]">{children}</div>;
+    return (
+      <div className="min-h-screen bg-[var(--color-cream)]">{children}</div>
+    );
   }
 
   return (
@@ -57,9 +69,13 @@ async function AdminShell({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-40 bg-white border-b border-[var(--color-sky-100)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link href="/admin" className="flex items-center gap-2">
-            <span className="w-9 h-9 rounded-xl bg-[var(--color-navy)] grid place-items-center text-white text-[10px] font-bold tracking-widest">
-              SGV
-            </span>
+            <Image
+              src="/images/sgv-logo.png"
+              alt="SGV Christian Club Collective logo"
+              width={36}
+              height={36}
+              className="w-9 h-9 object-contain"
+            />
             <span className="hidden sm:block">
               <span className="block text-sm font-semibold text-[var(--color-navy)] leading-tight">
                 Admin
