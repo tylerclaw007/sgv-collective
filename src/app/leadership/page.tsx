@@ -44,7 +44,7 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      <Section eyebrow="Current presidents" title="The team right now.">
+      <Section eyebrow="Current team" title="The team right now.">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {current.map((l, i) => (
             <ScrollReveal key={l.name} delay={i * 80}>

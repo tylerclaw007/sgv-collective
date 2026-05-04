@@ -3,6 +3,7 @@ export type Leader = {
   role: string;
   era: "current" | "past";
   blurb: string;
+  events?: string[];
 };
 
 export const leaders: Leader[] = [
@@ -24,6 +25,36 @@ export const leaders: Leader[] = [
     role: "President",
     era: "current",
     blurb: "Communication and partnerships across schools and churches.",
+    events: ["Homeward Worship Night"],
+  },
+  {
+    name: "Anna Chen",
+    role: "Worship Co-Lead",
+    era: "current",
+    blurb:
+      "Has helped lead worship across multiple collective nights, from Everything Night to Salt & Light.",
+    events: ["Everything Night Worship Team", "Salt & Light Worship Night"],
+  },
+  {
+    name: "Lucas Lau",
+    role: "Worship Co-Lead",
+    era: "current",
+    blurb: "Helps build out the worship team for collective gatherings.",
+    events: ["Salt & Light Worship Night"],
+  },
+  {
+    name: "Sydney Li",
+    role: "Worship Co-Lead",
+    era: "current",
+    blurb: "Has co-led worship at multiple collective nights across the year.",
+    events: ["Salt & Light Worship Night", "All In Worship Night"],
+  },
+  {
+    name: "Cohen Lim",
+    role: "Worship Co-Lead",
+    era: "current",
+    blurb: "Co-led worship for the March Homeward Worship Night.",
+    events: ["Homeward Worship Night"],
   },
   {
     name: "Caleb Newton",
@@ -37,48 +68,7 @@ export const leaders: Leader[] = [
     era: "past",
     blurb:
       "Helped grow the collective from a few clubs to a regional movement.",
-  },
-  {
-    name: "Anna Chen",
-    role: "Co-Lead, Everything Night Worship Team",
-    era: "past",
-    blurb:
-      "Co-led the Everything Night worship team alongside Rianna last year.",
-  },
-  {
-    name: "Anna Chen",
-    role: "Co-Lead, Salt & Light Worship Night",
-    era: "past",
-    blurb:
-      "Co-led the December Salt & Light Worship Night with Lucas Lau and Sydney Li.",
-  },
-  {
-    name: "Lucas Lau",
-    role: "Co-Lead, Salt & Light Worship Night",
-    era: "past",
-    blurb:
-      "Co-led the December Salt & Light Worship Night with Anna Chen and Sydney Li.",
-  },
-  {
-    name: "Sydney Li",
-    role: "Co-Lead, Salt & Light Worship Night",
-    era: "past",
-    blurb:
-      "Co-led the December Salt & Light Worship Night with Anna Chen and Lucas Lau.",
-  },
-  {
-    name: "Cohen Lim",
-    role: "Worship Co-Lead, Homeward Worship Night",
-    era: "past",
-    blurb:
-      "Co-led worship for the March Homeward Worship Night alongside Elyse Park.",
-  },
-  {
-    name: "Elyse Park",
-    role: "Worship Co-Lead, Homeward Worship Night",
-    era: "past",
-    blurb:
-      "Co-led worship for the March Homeward Worship Night alongside Cohen Lim.",
+    events: ["Everything Night Worship Team"],
   },
 ];
 
