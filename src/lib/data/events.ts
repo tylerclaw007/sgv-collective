@@ -53,7 +53,7 @@ export const events: Event[] = [
     location: "CA Students North Sanctuary",
     description:
       'This night was such a blessing. Thank you to everyone who came and helped make this night possible. Thank you Pastor Josh Patingo for your amazing sermon, and thank you CA Church LA for letting us use your space. "Home is where you can drop off your bags to experience freedom, identity, and relationship." Built around the Parable of the Lost Son (Luke 15:1-7) and James 4:8: "Come near to God and he will come near to you."',
-    image: "/images/everything-night-band.jpg",
+    image: "/images/homeward-worship-night.png",
     category: "Worship Night",
   },
   {
@@ -66,7 +66,7 @@ export const events: Event[] = [
     location: "Arcadia Chinese Church",
     description:
       "Worship Night was such an incredible night. Thank you to everyone who helped out with planning, setting up, leading us in worship, praying for this night and even showing up. Big shout out to our wonderful Pastor Jimmy Chacon for the sermon on Salt & Light, and thanks to Epicentre Radiant for letting us use your space. Built around Matthew 5:13-16, with lanterns, fake snow, and tables set for fellowship.",
-    image: "/images/everything-night-band.jpg",
+    image: "/images/salt-and-light-worship-night.jpg",
     category: "Worship Night",
   },
   {
