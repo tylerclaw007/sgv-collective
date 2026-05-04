@@ -44,6 +44,11 @@ export const churches: Church[] = [
     pastors: ["Pastor Levi Walker", "Pastor Jimmy Chacon"],
     support: "Partner church supporting the collective.",
   },
+  {
+    name: "Exodus Fellowship",
+    pastor: "Pastor Teresa Ko",
+    support: "Partner church walking with the collective.",
+  },
 ];
 
 export const pastoralGuidance: PastoralGuide[] = [
