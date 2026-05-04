@@ -12,7 +12,15 @@ export const metadata = {
     "Everything Night, worship gatherings, and summer hangs across the SGV.",
 };
 
+const UPCOMING_SLUGS = new Set([
+  "everything-night-may-2026",
+  "worship-nights-summer",
+]);
+
 export default function EventsPage() {
+  const upcoming = events.filter((e) => UPCOMING_SLUGS.has(e.slug));
+  const past = events.filter((e) => !UPCOMING_SLUGS.has(e.slug));
+
   return (
     <>
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--color-navy)] text-white">
@@ -45,7 +53,7 @@ export default function EventsPage() {
 
       <Section eyebrow="Upcoming" title="Mark your calendar.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((e, i) => (
+          {upcoming.map((e, i) => (
             <ScrollReveal key={e.slug} delay={i * 80}>
               <EventCard event={e} />
             </ScrollReveal>
@@ -53,16 +61,15 @@ export default function EventsPage() {
         </div>
       </Section>
 
-      <Section
-        tone="cream"
-        eyebrow="Past nights"
-        title="What it usually looks like."
-      >
-        <p className="max-w-2xl text-base md:text-lg text-[var(--color-sky-700)] leading-relaxed">
-          Worship, food, games, real conversation. Everything Night happens
-          twice a year and pulls every campus together.
-        </p>
-        <div className="mt-10">
+      <Section tone="cream" eyebrow="Past events" title="Where we have been.">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {past.map((e, i) => (
+            <ScrollReveal key={e.slug} delay={i * 80}>
+              <EventCard event={e} />
+            </ScrollReveal>
+          ))}
+        </div>
+        <div className="mt-12">
           <CTAButton href="/everything-night" variant="primary">
             See Everything Night
             <ArrowRight className="w-4 h-4" aria-hidden="true" />

@@ -36,10 +36,10 @@ export const events: Event[] = [
     date: "TBA",
     time: "Evening",
     iso: "",
-    location: "Hosted by partner churches",
+    location: "The Byrnes' House",
     description:
       "A series of regional worship gatherings throughout the summer for every club in the collective.",
-    image: "/images/everything-night-band.jpg",
+    image: "/images/coming-soon.svg",
     category: "Worship Night",
   },
   {
@@ -63,7 +63,7 @@ export const events: Event[] = [
     date: "Friday, December 19, 2025",
     time: "5:30 PM - 8:30 PM",
     iso: "2025-12-19T17:30:00-08:00",
-    location: "Arcadia Chinese Church",
+    location: "Epicenter Church",
     description:
       "Worship Night was such an incredible night. Thank you to everyone who helped out with planning, setting up, leading us in worship, praying for this night and even showing up. Big shout out to our wonderful Pastor Jimmy Chacon for the sermon on Salt & Light, and thanks to Epicentre Radiant for letting us use your space. Built around Matthew 5:13-16, with lanterns, fake snow, and tables set for fellowship.",
     image: "/images/salt-and-light-worship-night.jpg",

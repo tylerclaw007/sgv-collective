@@ -12,6 +12,7 @@ export const leaders: Leader[] = [
     role: "President",
     era: "current",
     blurb: "Leading the collective forward and keeping every campus connected.",
+    events: ["Everything Night Logistics", "Inner Circle"],
   },
   {
     name: "Colin",
@@ -19,13 +20,18 @@ export const leaders: Leader[] = [
     era: "current",
     blurb:
       "Events, logistics, and making sure Everything Night actually happens.",
+    events: ["Everything Night Logistics", "Inner Circle"],
   },
   {
     name: "Elyse",
     role: "President",
     era: "current",
     blurb: "Communication and partnerships across schools and churches.",
-    events: ["Homeward Worship Night"],
+    events: [
+      "Homeward Worship Night",
+      "Everything Night Logistics",
+      "Inner Circle",
+    ],
   },
   {
     name: "Anna Chen",
@@ -54,7 +60,42 @@ export const leaders: Leader[] = [
     role: "Worship Co-Lead",
     era: "current",
     blurb: "Co-led worship for the March Homeward Worship Night.",
-    events: ["Homeward Worship Night"],
+    events: ["Homeward Worship Night", "Inner Circle"],
+  },
+  {
+    name: "Elizabeth Clark",
+    role: "Inner Circle",
+    era: "current",
+    blurb: "Part of the inner circle helping shape the collective's direction.",
+    events: ["Inner Circle"],
+  },
+  {
+    name: "Adele Duke",
+    role: "Inner Circle",
+    era: "current",
+    blurb: "Part of the inner circle helping shape the collective's direction.",
+    events: ["Inner Circle"],
+  },
+  {
+    name: "Zion Fishkind",
+    role: "Inner Circle",
+    era: "current",
+    blurb: "Part of the inner circle helping shape the collective's direction.",
+    events: ["Inner Circle"],
+  },
+  {
+    name: "Hudson Tran",
+    role: "Inner Circle",
+    era: "current",
+    blurb: "Part of the inner circle helping shape the collective's direction.",
+    events: ["Inner Circle"],
+  },
+  {
+    name: "Sammy Byrnes",
+    role: "Inner Circle",
+    era: "current",
+    blurb: "Part of the inner circle helping shape the collective's direction.",
+    events: ["Inner Circle"],
   },
   {
     name: "Caleb Newton",

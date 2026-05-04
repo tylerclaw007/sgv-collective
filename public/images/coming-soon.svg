@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="55%" stop-color="#143661"/>
+      <stop offset="100%" stop-color="#1f4f8c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#a9d2ff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a9d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#dots)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+    <text x="400" y="245" fill="#a9d2ff" font-size="18" font-weight="700" letter-spacing="6">SUMMER WORSHIP NIGHTS</text>
+    <text x="400" y="335" fill="#ffffff" font-size="76" font-weight="800" letter-spacing="-2">Coming soon</text>
+    <text x="400" y="385" fill="#cfe1f7" font-size="20" font-weight="500">Dates and venues dropping soon</text>
+  </g>
+</svg>

@@ -39,13 +39,14 @@ export function SiteFooter() {
               <Mail className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
-              href="https://instagram.com/"
+              href="https://instagram.com/sgv_christiancc"
               target="_blank"
               rel="noreferrer"
-              aria-label="Instagram"
-              className="p-2 rounded-lg bg-white/5 hover:bg-[var(--color-baby)] hover:text-[var(--color-navy)] transition cursor-pointer"
+              aria-label="Instagram @sgv_christiancc"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-[var(--color-baby)] hover:text-[var(--color-navy)] transition cursor-pointer text-xs font-semibold"
             >
               <InstagramIcon className="w-4 h-4" />
+              <span>@sgv_christiancc</span>
             </a>
           </div>
         </div>

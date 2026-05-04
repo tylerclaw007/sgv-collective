@@ -95,6 +95,15 @@ export default function ContactPage() {
               <p className="mt-1 text-sm text-[var(--color-sky-700)]">
                 We post upcoming events and recap photos on Instagram.
               </p>
+              <a
+                href="https://instagram.com/sgv_christiancc"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[var(--color-navy)] text-white hover:bg-[var(--color-baby)] hover:text-[var(--color-navy)] transition cursor-pointer"
+              >
+                <InstagramIcon className="w-3.5 h-3.5" />
+                @sgv_christiancc
+              </a>
             </div>
           </aside>
         </div>
