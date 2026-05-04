@@ -38,6 +38,48 @@ export const leaders: Leader[] = [
     blurb:
       "Helped grow the collective from a few clubs to a regional movement.",
   },
+  {
+    name: "Anna Chen",
+    role: "Co-Lead, Everything Night Worship Team",
+    era: "past",
+    blurb:
+      "Co-led the Everything Night worship team alongside Rianna last year.",
+  },
+  {
+    name: "Anna Chen",
+    role: "Co-Lead, Salt & Light Worship Night",
+    era: "past",
+    blurb:
+      "Co-led the December Salt & Light Worship Night with Lucas Lau and Sydney Li.",
+  },
+  {
+    name: "Lucas Lau",
+    role: "Co-Lead, Salt & Light Worship Night",
+    era: "past",
+    blurb:
+      "Co-led the December Salt & Light Worship Night with Anna Chen and Sydney Li.",
+  },
+  {
+    name: "Sydney Li",
+    role: "Co-Lead, Salt & Light Worship Night",
+    era: "past",
+    blurb:
+      "Co-led the December Salt & Light Worship Night with Anna Chen and Lucas Lau.",
+  },
+  {
+    name: "Cohen Lim",
+    role: "Worship Co-Lead, Homeward Worship Night",
+    era: "past",
+    blurb:
+      "Co-led worship for the March Homeward Worship Night alongside Elyse Park.",
+  },
+  {
+    name: "Elyse Park",
+    role: "Worship Co-Lead, Homeward Worship Night",
+    era: "past",
+    blurb:
+      "Co-led worship for the March Homeward Worship Night alongside Cohen Lim.",
+  },
 ];
 
 export const roles = [

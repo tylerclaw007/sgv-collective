@@ -83,6 +83,12 @@ export const pastoralGuidance: PastoralGuide[] = [
     church: "Christian Assembly Eagle Rock",
     role: "Pastoral guidance for the collective",
   },
+  {
+    name: "Pastor Teresa Ko",
+    pastor: "Pastor Teresa Ko",
+    church: "Exodus Fellowship",
+    role: "Pastoral guidance for the collective",
+  },
 ];
 
 export const affiliates: Affiliate[] = [
