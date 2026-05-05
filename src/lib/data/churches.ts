@@ -90,7 +90,7 @@ export const pastoralGuidance: PastoralGuide[] = [
   },
   {
     name: "Pastor Teresa Ko",
-    pastor: "Pastor Teresa Ko",
+    pastor: "Youth Leader Teresa Ko",
     church: "Exodus Fellowship",
     role: "Pastoral guidance for the collective",
   },
