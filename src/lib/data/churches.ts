@@ -46,7 +46,7 @@ export const churches: Church[] = [
   },
   {
     name: "Exodus Fellowship",
-    pastor: "Pastor Teresa Ko",
+    pastor: "Youth Leader Teresa Ko",
     support: "Partner church walking with the collective.",
   },
 ];
@@ -89,7 +89,7 @@ export const pastoralGuidance: PastoralGuide[] = [
     role: "Pastoral guidance for the collective",
   },
   {
-    name: "Pastor Teresa Ko",
+    name: "Youth Leader Teresa Ko",
     pastor: "Youth Leader Teresa Ko",
     church: "Exodus Fellowship",
     role: "Pastoral guidance for the collective",
