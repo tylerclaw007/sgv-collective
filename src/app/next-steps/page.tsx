@@ -19,6 +19,7 @@ import {
   biblePlans,
   foundations,
   sevenDays,
+  welcomeVideo,
 } from "@/lib/data/next-steps";
 
 export const metadata = {
@@ -96,6 +97,45 @@ export default function NextStepsPage() {
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </section>
+
+      <Section
+        eyebrow="Watch this"
+        title="60 seconds. Why this matters."
+        description="A short word from the collective before you start the guide."
+      >
+        <div className="max-w-4xl">
+          {welcomeVideo.youtubeId ? (
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--color-sky-100)] shadow-xl shadow-[var(--color-navy)]/10 bg-[var(--color-navy)]">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${welcomeVideo.youtubeId}?rel=0`}
+                title={welcomeVideo.title}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          ) : (
+            <div className="relative aspect-video rounded-2xl border-2 border-dashed border-[var(--color-baby)] bg-gradient-to-br from-[var(--color-cream)] to-white grid place-items-center text-center px-6">
+              <div>
+                <div className="mx-auto w-14 h-14 rounded-2xl bg-[var(--color-baby)] grid place-items-center text-[var(--color-navy)]">
+                  <PlayCircle className="w-7 h-7" aria-hidden="true" />
+                </div>
+                <p className="mt-5 text-base md:text-lg font-semibold text-[var(--color-navy)]">
+                  Welcome video coming soon.
+                </p>
+                <p className="mt-2 text-sm text-[var(--color-sky-700)] max-w-md mx-auto">
+                  Drop a YouTube ID into{" "}
+                  <span className="font-mono text-[var(--color-navy)]">
+                    lib/data/next-steps.ts
+                  </span>{" "}
+                  to go live.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </Section>
 
       <Section
         eyebrow="Start here"

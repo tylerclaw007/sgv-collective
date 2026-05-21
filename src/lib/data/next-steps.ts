@@ -1,5 +1,12 @@
 // Content for /next-steps. Edit copy and plan URLs here.
 
+// Welcome video shown right under the hero. Drop a YouTube video ID (the
+// 11-char string after `v=` in the URL) into `youtubeId` to go live.
+export const welcomeVideo: { youtubeId: string | null; title: string } = {
+  youtubeId: null,
+  title: "Welcome to your next step",
+};
+
 export type FoundationCard = {
   title: string;
   body: string;
