@@ -4,6 +4,8 @@ export type Church = {
   pastors?: string[];
   city?: string;
   support: string;
+  url?: string;
+  blurb?: string;
 };
 
 export type PastoralGuide = {
@@ -16,38 +18,58 @@ export type PastoralGuide = {
 export type Affiliate = {
   name: string;
   description: string;
+  url?: string;
+  blurb?: string;
 };
 
 export const churches: Church[] = [
   {
     name: "Epicenter",
     pastor: "Pastor Josh Patingo",
+    city: "Pasadena, CA",
     support: "Partner church and pastoral guidance team.",
+    url: "https://epicentre.org",
+    blurb:
+      "A multi-ethnic, intergenerational family church in Pasadena. Sundays at 10 AM.",
   },
   {
     name: "Seeds of Life Church",
     pastor: "Pastor Kenny Yee",
+    city: "Alhambra, CA",
     support: "Partner church walking with the collective.",
+    url: "https://seedsoflife.org",
+    blurb:
+      "A multi-generational family of believers in the San Gabriel Valley.",
   },
   {
     name: "Frontier Church",
     pastor: "Pastor Abraham",
+    city: "Pasadena, CA",
     support: "Partner church standing with our student leaders.",
+    url: "https://frontierchurch.us",
+    blurb: "A Pasadena church carrying the gospel into the next generation.",
   },
   {
     name: "Vintage Pasadena Church",
     pastor: "Pastor Christian Franklin",
+    city: "Pasadena, CA",
     support: "Partner church serving the SGV alongside us.",
+    url: "https://vintagepasadena.com",
+    blurb: "Heart-of-Pasadena church. Sundays at 9 and 11 AM.",
   },
   {
     name: "Christian Assembly Eagle Rock",
     pastors: ["Pastor Levi Walker", "Pastor Jimmy Chacon"],
+    city: "Eagle Rock, Los Angeles",
     support: "Partner church supporting the collective.",
+    url: "https://cachurch.com",
+    blurb: "Eagle Rock church living out grace, worship, family, and Kingdom.",
   },
   {
     name: "Exodus Fellowship",
     pastor: "Youth Leader Teresa Ko",
     support: "Partner church walking with the collective.",
+    blurb: "A youth fellowship walking closely with the collective.",
   },
 ];
 
@@ -101,6 +123,9 @@ export const affiliates: Affiliate[] = [
     name: "Circuit Riders",
     description:
       "Youth outreach organization that comes alongside the collective. Not a church, but a trusted ministry partner.",
+    url: "https://circuitriders.com",
+    blurb:
+      "A missions movement of young people pursuing Jesus. A YWAM ministry.",
   },
 ];
 

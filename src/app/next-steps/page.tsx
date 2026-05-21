@@ -21,6 +21,8 @@ import {
   sevenDays,
   welcomeVideo,
 } from "@/lib/data/next-steps";
+import { affiliates, churches } from "@/lib/data/churches";
+import { Church, ExternalLink, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "Next Steps",
@@ -366,6 +368,100 @@ export default function NextStepsPage() {
             </CTAButton>
           </article>
         </div>
+      </Section>
+
+      <Section
+        id="get-connected"
+        tone="cream"
+        eyebrow="Get connected"
+        title="Find a church that will know you by name."
+        description="A club is for the school year. A church is for life. These are the partner churches walking with us across the valley."
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {churches.map((c, i) => (
+            <ScrollReveal key={c.name} delay={i * 60}>
+              <article className="group h-full flex flex-col rounded-2xl bg-white border border-[var(--color-sky-100)] p-6 hover:border-[var(--color-baby)] hover:shadow-lg hover:shadow-[var(--color-navy)]/5 transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 w-11 h-11 rounded-xl bg-[var(--color-sky-50)] grid place-items-center text-[var(--color-navy)] group-hover:bg-[var(--color-baby)] transition">
+                    <Church className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base font-semibold text-[var(--color-navy)]">
+                      {c.name}
+                    </h3>
+                    {c.pastor && (
+                      <p className="mt-0.5 text-sm font-medium text-[var(--color-sky-600)]">
+                        {c.pastor}
+                      </p>
+                    )}
+                    {c.pastors && (
+                      <p className="mt-0.5 text-sm font-medium text-[var(--color-sky-600)]">
+                        {c.pastors.join(", ")}
+                      </p>
+                    )}
+                    {c.city && (
+                      <p className="mt-2 inline-flex items-center gap-1 text-xs text-[var(--color-sky-700)]">
+                        <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+                        {c.city}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-[var(--color-sky-700)] leading-relaxed flex-1">
+                  {c.blurb ?? c.support}
+                </p>
+                {c.url ? (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-sky-600)] hover:text-[var(--color-navy)] transition self-start"
+                  >
+                    Visit church
+                    <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <p className="mt-5 text-xs text-[var(--color-sky-600)] italic self-start">
+                    Reach out through the collective for an intro.
+                  </p>
+                )}
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {affiliates.length > 0 && (
+          <div className="mt-12">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-sky-600)]">
+              Trusted partners
+            </p>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {affiliates.map((a, i) => (
+                <ScrollReveal key={a.name} delay={i * 60}>
+                  <article className="group h-full flex flex-col rounded-2xl bg-white border border-dashed border-[var(--color-sky-200)] p-6 hover:border-[var(--color-baby)] transition-all duration-300">
+                    <h3 className="text-base font-semibold text-[var(--color-navy)]">
+                      {a.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-[var(--color-sky-700)] leading-relaxed flex-1">
+                      {a.blurb ?? a.description}
+                    </p>
+                    {a.url && (
+                      <a
+                        href={a.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-sky-600)] hover:text-[var(--color-navy)] transition self-start"
+                      >
+                        Visit site
+                        <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                      </a>
+                    )}
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        )}
       </Section>
     </>
   );
