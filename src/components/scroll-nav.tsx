@@ -13,6 +13,7 @@ const links = [
   { href: "/events", label: "Events" },
   { href: "/everything-night", label: "Everything Night" },
   { href: "/clubs", label: "Clubs" },
+  { href: "/next-steps", label: "Next Steps" },
   { href: "/leadership", label: "Leadership" },
   { href: "/churches", label: "Churches" },
   { href: "/contact", label: "Contact" },
@@ -41,8 +42,9 @@ export function ScrollNav() {
     setOpen(false);
   }, [pathname]);
 
-  // Hide nav entirely on /admin to keep that area focused.
+  // Hide nav entirely on /admin and printable cutout sheets to keep the focus.
   if (pathname?.startsWith("/admin")) return null;
+  if (pathname?.startsWith("/club-cutouts/print")) return null;
 
   return (
     <nav

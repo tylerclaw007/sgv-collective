@@ -51,12 +51,18 @@ html {
 }
 
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(13, 31, 61, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(13, 31, 61, 0.08) 1px,
+    transparent 1px
+  );
   background-size: 24px 24px;
 }
 
 .bg-dot-grid-dark {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
   background-size: 24px 24px;
 }
 
@@ -146,4 +152,139 @@ html {
 .fancy-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* ---------- Club Cutouts: printable sheets ---------- */
+
+.print-sheet {
+  width: 8.5in;
+  max-width: 100%;
+  padding: 0.5in;
+  box-sizing: border-box;
+}
+
+.print-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.25in;
+  width: 100%;
+  aspect-ratio: 7.5 / 10;
+}
+
+.print-card {
+  border: 1px dashed #8ec5fb;
+  border-radius: 0.25in;
+  padding: 0.3in;
+  background: #ffffff;
+  color: #0d1f3d;
+  display: flex;
+}
+
+.print-card-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.print-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2a6fc0;
+}
+
+.print-headline {
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #0d1f3d;
+  text-wrap: balance;
+}
+
+.print-body {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #21569a;
+  flex: 1;
+}
+
+.print-divider {
+  height: 1px;
+  background: #dceeff;
+  margin: 10px 0;
+}
+
+.print-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.print-qr {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.print-qr svg {
+  width: 100%;
+  height: 100%;
+}
+
+.print-foot-text {
+  min-width: 0;
+}
+
+.print-cta {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2a6fc0;
+}
+
+.print-url {
+  margin-top: 2px;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Mono",
+    "Source Code Pro", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0d1f3d;
+}
+
+.print-brand {
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #21569a;
+}
+
+@page {
+  size: letter portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-sheet {
+    width: 8.5in;
+    padding: 0.5in;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: avoid;
+  }
+  .print-card {
+    border-color: #b8dcff;
+  }
 }

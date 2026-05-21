@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/club-cutouts/print")) return null;
   return (
-    <footer className="relative mt-24 bg-[var(--color-navy)] text-[var(--color-sky-100)]">
+    <footer className="relative mt-24 bg-[var(--color-navy)] text-[var(--color-sky-100)] print:hidden">
       <div className="absolute inset-0 bg-dot-grid-dark opacity-40 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
@@ -59,6 +64,7 @@ export function SiteFooter() {
               { href: "/events", label: "Events" },
               { href: "/everything-night", label: "Everything Night" },
               { href: "/clubs", label: "Clubs" },
+              { href: "/next-steps", label: "Next Steps" },
             ].map((l) => (
               <li key={l.href}>
                 <Link
@@ -80,6 +86,7 @@ export function SiteFooter() {
               { href: "/churches", label: "Churches" },
               { href: "/contact", label: "Contact" },
               { href: "/contact?type=start", label: "Start a club" },
+              { href: "/club-cutouts", label: "Club Cutouts" },
             ].map((l) => (
               <li key={l.href}>
                 <Link
