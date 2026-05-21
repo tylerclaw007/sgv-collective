@@ -7,6 +7,11 @@ export const welcomeVideo: { youtubeId: string | null; title: string } = {
   title: "Welcome to your next step",
 };
 
+// Google Form (or any external form) that collects name, phone, and city
+// so a youth leader can text the person back. Paste the full URL here.
+export const reachOutFormUrl: string | null =
+  "https://docs.google.com/forms/d/e/1FAIpQLScmLXayQ3DHvz6r6Um8l9Aez2K5oBS5oyEXOIqzyD4O8CRDHA/viewform";
+
 export type FoundationCard = {
   title: string;
   body: string;

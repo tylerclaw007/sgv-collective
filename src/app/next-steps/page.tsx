@@ -18,11 +18,12 @@ import {
   bibleAppLinks,
   biblePlans,
   foundations,
+  reachOutFormUrl,
   sevenDays,
   welcomeVideo,
 } from "@/lib/data/next-steps";
 import { affiliates, churches } from "@/lib/data/churches";
-import { Church, ExternalLink, MapPin } from "lucide-react";
+import { Church, ExternalLink, MapPin, MessageCircle } from "lucide-react";
 
 export const metadata = {
   title: "Next Steps",
@@ -377,6 +378,42 @@ export default function NextStepsPage() {
         title="Find a church that will know you by name."
         description="A club is for the school year. A church is for life. These are the partner churches walking with us across the valley."
       >
+        <article className="md:col-span-2 mb-6 rounded-2xl bg-[var(--color-navy)] text-white p-7 md:p-9 overflow-hidden relative">
+          <div className="absolute inset-0 bg-dot-grid-dark opacity-25 pointer-events-none" />
+          <div className="relative grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+            <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--color-baby)] grid place-items-center text-[var(--color-navy)]">
+              <MessageCircle className="w-6 h-6" aria-hidden="true" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-baby)]">
+                Want someone to reach out?
+              </p>
+              <h3 className="mt-1 text-xl md:text-2xl font-semibold tracking-tight">
+                Drop your name, number, and city.
+              </h3>
+              <p className="mt-2 text-sm md:text-base text-[var(--color-sky-200)] leading-relaxed max-w-xl">
+                A youth leader from the collective will text you within 48
+                hours. No spam, just hello.
+              </p>
+            </div>
+            {reachOutFormUrl ? (
+              <a
+                href={reachOutFormUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-semibold bg-[var(--color-baby)] hover:bg-[var(--color-sky-300)] text-[var(--color-navy)] transition-all duration-200 cursor-pointer shadow-md shadow-black/20 self-start md:self-auto"
+              >
+                Fill out the form
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold bg-white/10 text-[var(--color-baby)] border border-dashed border-[var(--color-baby)] self-start md:self-auto">
+                Form coming soon
+              </span>
+            )}
+          </div>
+        </article>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {churches.map((c, i) => (
             <ScrollReveal key={c.name} delay={i * 60}>
